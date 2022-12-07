@@ -37,7 +37,7 @@
 {\end{bmatrix}\egroup_{\textstyle\mathstrut\mysubscript}}
 
 
-\title{Tut 3}
+\title{Tutorial 3}
 \subtitle
 {
 	\textbf{keywords}: covariance, expected value, diversification, variance, risk, vector, matrix
@@ -125,23 +125,25 @@
 
 \noindent The expected return of betting \$1 all at once,
 \begin{align*}
-	E(4X)&= \\
-	&=
+	E(4X)&=4E(X) \\
+	&=4\mu 
 \end{align*} \noindent and the risk of betting \$1 all at once (variance is a measure of risk),
 \begin{align*}
-Var(4X)&= \\
-&=
+Var(4X)&=16Var(X) \\
+&=16\sigma^2
 \end{align*} \noindent The expected return of betting 25 cents four times,
 \begin{align*}
-E(X_1+X_2+X_3+X_4)&= \\
-&= \\
-&=
+E(X_1+X_2+X_3+X_4)&=E(X_1)+E(X_2)+E(X_3)+E(X_4) \\
+&=\mu+\mu+\mu+\mu \\
+&=4\mu
 \end{align*}
 \noindent and the risk of betting 25 cents four times,
 \begin{align*}
-Var(X_1+X_2+X_3+X_4)&= \\
-&= \\
-&=
+Var(X_1+X_2+X_3+X_4)&=Var(X_1)+Var(X_2)+Var(X_3)+Var(X_4) \\
+&+cov(X_1,X_2)+cov(X_1,X_3)+\dots + cov(X_2, X_1) + cov(X_2, X_3) \\
+&+ \dots + cov(\dots,\dots)  \\
+&=\sigma^2+\sigma^2+\sigma^2+\sigma^2+0+0+\dots+0 \\
+&=4\sigma^2
 \end{align*}
 \noindent Farshid's Mum is right! Both strategies have the same expected return but betting \$1 has a much larger risk. 
 
@@ -161,20 +163,24 @@ Var(X_1+X_2+X_3+X_4)&= \\
 
 \noindent The expected value and variance of Estimator 1,
 \begin{align*}
-	E(\tilde{\mu}) &= \\
-	Var(\tilde{\mu}) &=
+	E(\tilde{\mu}) &= E(X) = \mu \\
+	Var(\tilde{\mu}) &= Var(X) = \sigma^2
 \end{align*}
 \noindent The expected value and variance of Estimator 2, 
 \begin{align*}
-E(\hat{\mu}) &=  \\
-&= \\
-&= \\
-&= \\
-Var(\hat{\mu}) &= \\
-&=  \\
-&= \\
-&= \\
-&= 
+E(\hat{\mu}) &= E\Big(\dfrac{X_1+X_2+X_3+X_4}{4}\Big) \\
+&= \dfrac{1}{4}E(X_1+X_2+X_3+X_4) \\
+&= \dfrac{1}{4} E(X_1)+E(X_2)+E(X_3)+E(X_4)\\
+&= \dfrac{1}{4} \times 4\mu \\
+&=\mu \\
+Var(\hat{\mu}) &= Var(\bar{X}) \\
+&= Var\Big(\dfrac{X_1+X_2+X_3+X_4}{4}\Big) \\
+&=\dfrac{1}{16}Var(X_1+X_2+X_3+X_4) \\
+&= \dfrac{1}{16}[Var(X_1)+Var(X_2)+Var(X_3)+Var(X_4) \\
+&+cov(X_1,X_2)+cov(X_1,X_3)+\dots +cov(X_2,X_1)+cov(X_2,X_3)+\dots +cov(\dots,\dots)] \\
+&= \dfrac{1}{16}[Var(X_1)+Var(X_2)+Var(X_3)+Var(X_4) + 0 + 0 + \dots + 0] \\
+&= \dfrac{1}{16}[\sigma^2+\sigma^2+\sigma^2+\sigma^2] \\
+&= \dfrac{\sigma^2}{4}
 \end{align*}
 \noindent Both estimators have the same expected value $E(X) = E(\bar{X}) = \mu$ but the 2nd estimator (average of 4 observations) is less risky $Var(X) = \sigma^2 > Var(\bar{X}) = \dfrac{\sigma^2}{4}$.
 
